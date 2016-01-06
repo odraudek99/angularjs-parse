@@ -1,0 +1,17 @@
+{
+    "name": "angularjs-ejercicios",
+    "version": "0.0.1",
+    "dependencies": {
+        "normalize-css": "*",
+        "jquery": "~2.0.2",
+        "modernizr": "*",
+        "angular-cookies":"*",
+        "requirejs": "*",
+        "angular":"*",
+        "angular-resource":"*",
+        "angular-route":"*",
+        "bootstrap":"*",
+        "ng-table":"*",
+        "angular-growl-2":"*"
+    }
+}

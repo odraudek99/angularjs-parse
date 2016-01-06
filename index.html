@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+	<title>Angular Rest SpringSecurity Example</title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="bower_components/ng-table/dist/ng-table.css" rel="stylesheet" />
+    
+    <!-- <link rel="stylesheet"	href="bower_components/angular-growl-2/build/angular-growl.min.css" />  -->
+    <!-- <link rel="stylesheet" 	href="webjars/angular-block-ui/0.2.0/dist/angular-block-ui.min.css" /> -->
+    
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+ </head>
+<body style="padding-top: 60px">
+
+	<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Angular+Rest+SpringSecurity</a>
+			</div>
+
+			<div class="collapse navbar-collapse" >
+				<ul ng-show="user" class="nav navbar-nav">
+					<li ng-class="{active: $route.current.activeNav == 'news'}"><a href="#!/">News</a></li>
+					<li ng-class="{active: $route.current.activeNav == 'personas'}"><a href="#!/personas">Personas</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right" ng-show="user">
+					<li class="dropdown">
+						<a href="" class="dropdown-toggle" data-toggle="dropdown">{{user.name}} <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="" ng-click="logout()">Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="alert alert-danger" ng-show="error">{{error}}</div>
+		<div growl></div>
+		<div ng-view></div>
+	</div>
+
+
+	<script src="bower_components/jquery/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/ng-table/dist/ng-table.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+	<script src="bower_components/angular-growl-2/build/angular-growl.min.js"></script> 
+	
+	
+	<script src="js/app.js"></script>
+	
+<script type="text/javascript">
+    Parse.initialize("CLAVE_PARSE", "CLAVE_PARSE");
+
+
+  </script>
+
+</body>
+
+
+
+
+
+
+
+</html>
+
+
+
+

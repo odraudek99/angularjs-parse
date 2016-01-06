@@ -1,0 +1,34 @@
+<div style="float: right">
+	<a href="#!/create" class="btn btn-default" ng-show="hasRole('ROLE_ADMIN')">Create</a>
+</div>
+<div class="page-header">
+	<h3>News</h3>
+</div>
+
+
+<div class="row">
+    <div class="col-md-10" >
+      
+      <table ng-table="tableParams" class="table table-condensed table-bordered table-striped">
+        <tr ng-repeat="newsEntry in newsEntries">
+          <td data-title="'id'" sortable="'id'">{{newsEntry.id}}</td>
+          <td data-title="'content'" sortable="'content'">{{newsEntry.content}}</td>
+          
+        <td data-title="'eliminar'">          <a ng-click="deleteEntry(newsEntry)" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')">Remove</a></td>
+		<td data-title="'editar'"><a href="#!/edit/{{newsEntry.id}}" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')">Edit</a></td>
+        </tr>
+      </table>
+    </div>
+
+    
+<!-- 
+<div ng-repeat="newsEntry in newsEntries">
+	<hr />
+	<div class="pull-right">
+		<a ng-click="deleteEntry(newsEntry)" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')">Remove</a>
+		<a href="#!/edit/{{newsEntry.id}}" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')">Edit</a>
+	</div>
+	<h4>{{newsEntry.date | date}}</h4>
+	<p>{{newsEntry.content}}</p>
+</div> -->
+<hr />

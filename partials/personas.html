@@ -1,0 +1,24 @@
+<div style="float: right">
+	<a href="#!/createPersona" class="btn btn-default" ng-show="hasRole('ROLE_ADMIN')">Create</a>
+</div>
+<div class="page-header">
+	<h3>Personas</h3>
+</div>
+
+
+<div class="row">
+    <div class="col-md-10" >
+      
+      <table ng-table="tableParams" class="table table-condensed table-bordered table-striped">
+        <tr ng-repeat="persona in personas">
+          <td data-title="'nombre'" sortable="'nombre'">{{persona.nombre}}</td>
+          <td data-title="'tipoPersona'" sortable="'tipoPersona'">{{persona.tipoPersona}}</td>
+          <td data-title="'Eliminar'" ><a ng-click="deleteEntry(persona)" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')">Remove</a></td>
+          
+          
+        </tr>
+      </table>
+    </div>
+    
+
+<hr />
